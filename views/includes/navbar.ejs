@@ -1,14 +1,48 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top">
-    <a class="navbar-brand" href="/"><i class="fa-regular fa-compass"></i></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link " href="/">Home <span class="sr-only">(current)</span></a>
-        <a class="nav-link" href="/listings">All Listings</a>
-        <a class="nav-link" href="/listings/new">Add new Listing</a>
-       
-      </div>
+<style>
+  .btn-search{
+    background-color: #fe424d !important;
+    color: #fff !important;
+    
+  }
+  .btn-search :hover{
+    background-color: #fe424d !important;
+    color: #fff !important;
+  }
+  .navbar {
+    position: sticky !important;
+    top:0 !important;
+    overflow: hidden !important;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
+  <div class="container-fluid">
+  <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-link" href="/listings">Explore</a>
     </div>
-  </nav>
+
+    <div class="navbar-nav ms-auto">
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-search my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+    <div class="navbar-nav ms-auto">
+      <a class="nav-link" href="/listings/new">Airbnb your home</a>
+      <% if(!currUser) { %>
+        <a class="nav-link " href="/signup"><b>Sign up</b></a>
+        <a class="nav-link" href="/login"><b>Log in</b></a>
+        <% } %>
+          <% if(currUser) { %>
+            <a class="nav-link" href="/logout"><b>Log out</b></a>
+            <% } %>
+    </div>
+  </div>
+</div>
+</nav>
